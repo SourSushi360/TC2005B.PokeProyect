@@ -1,4 +1,5 @@
 /* App */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 .main-container {
   justify-content: center;
   text-align: center;
@@ -10,9 +11,9 @@
 /* game-boy */
 .layout-game {
   width: 400px;
-  height: 600px;
+  height: 650px;
 
-  border: solid 5px black;
+  border: solid 4px black;
   border-radius: 4% 4% 20% 4%;
 
   align-items: center;
@@ -20,8 +21,11 @@
   flex-direction: column;
 
   background-color: #EDE3D9;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
 } .decor {
-  border-bottom: solid black 5px;
+  border-bottom: solid #A29283 5px;
   width: 100%;
   height: 25px;
 
@@ -31,7 +35,7 @@
   width: 0px;
   height: 100%;
   
-  border-right: solid black 5px;
+  border-right: solid #A29283 5px;
 
   margin-left: 25px;
 } .decor .r {
@@ -40,16 +44,46 @@
 
   background: transparent;
   
-  border-left: solid black 5px;
+  border-left: solid #A29283 5px;
 
   margin-left: calc(100% - 60px);
+} #decor {
+  width: 130px;
+  height: 60px;
+
+  position: absolute;
+  top: 555px;
+  right: 15px;
+  transform: rotate(-35deg);
+
+  display: flex;
+  flex-direction: row;
+} #decor div {
+  margin: 6px;
+  height: 100%;
+  width: 10px;
+
+  margin-top: -5px;
+
+  background: #B8A69C;
+  border-radius: 40%;
+  border: inset #A29283 5px;
+} #decor span {
+  background: #cfbdaa;
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+
+  margin-left: -50px;
+  margin-top: 40px;
 }
 
 .screen-box {
   width: 350px;
   height: 250px;
 
-  border: solid 5px black;
+  border: solid 3px #393842;
   border-radius: 5% 5% 20% 5%;
 
   background-color: #716F84;
@@ -60,34 +94,29 @@
   align-items: center;
   display: flex;
 } .screen {
-  border: 5px solid black;
+  border: 3px solid #454700;
   border-radius: 3%;
-  width: 200px;
+  width: 225px;
   height: 200px;
 
   background-color: #797E00;
 }
 
 .button-container {
-  padding-top: 50px;
+  padding-top: 100px;
 
   display: flex;
   flex-direction: row;
 } .button-container #container {
-  background-color: blue;
-
   width: 100px;
   height: 100px;
   margin: 10px;
-
-  flex-direction: row;
-  display: flex;
 } 
 .contain-all {
   flex-direction: row;
   display: flex;
 
-  transform: rotate(-35deg);
+  transform: rotate(-30deg);
 } .container-action #button {
   background-color: #AA0A60;
   border-radius: 100%;
@@ -102,13 +131,13 @@
   margin: 10px 10px 0 0;
 }
 .container-select .container {
-  transform: rotate(-35deg);
+  transform: rotate(-30deg);
 } .container-select #button {
   background-color: #716F84;
   width: 39px;
   height: 10px;
 
-  border-radius: 20%;
+  border-radius: 40%;
   border: #716F84 outset 3px;
 } .container-select #button:active {
   border-style: inset;
@@ -124,4 +153,77 @@
   font-family: 'Courier New', Courier, monospace;
 } .container-select #first {
   margin-right: 10px;
+}
+.container-pad {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+} .container-pad .pad{
+  background-color: black;
+  width: 27px;
+  height: 27px;
+  border: solid black 3px;
+} .container-pad #middle {
+  width: 100%;
+  height: 30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+} #up {
+  background: linear-gradient(to top, black, rgb(24, 24, 24));
+  border-radius: 8px 8px 0 0;
+} #up:active {
+  background: black;
+  border-top-color: rgb(50, 50, 50);
+  border-left-color: rgb(50, 50, 50);
+  border-right-color: rgb(50, 50, 50);
+} #left {
+  background: linear-gradient(to left, black, rgb(24, 24, 24));
+  border-radius: 8px 0 0 8px;
+} #left:active {
+  background: black;
+  border-top-color: rgb(50, 50, 50);
+  border-bottom-color: rgb(50, 50, 50);
+  border-left-color: rgb(50, 50, 50);
+} #down {
+  background: linear-gradient(to bottom, black, rgb(24, 24, 24));
+  border-radius: 0 0 8px 8px;
+} #down:active {
+  background: black;
+  border-bottom-color: rgb(50, 50, 50);
+  border-left-color: rgb(50, 50, 50);
+  border-right-color: rgb(50, 50, 50);
+} #right {
+  background: linear-gradient(to right, black, rgb(24, 24, 24));
+  border-radius: 0 8px 8px 0;
+} #right:active {
+  background: black;
+  border-top-color: rgb(50, 50, 50);
+  border-bottom-color: rgb(50, 50, 50);
+  border-right-color: rgb(50, 50, 50);
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  position: absolute;
+  top: 305px;
+  left: 20px;
+  
+  color: #07025E;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+} .label #N {
+  font-weight: 900;
+  font-size: large;
+} .label #GB {
+  font-weight: 400;
+  font-size: xx-large;
+} .label #tm {
+  font-weight: 100;
+  font-size: small;
 }
