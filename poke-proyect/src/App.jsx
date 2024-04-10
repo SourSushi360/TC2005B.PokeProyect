@@ -1,7 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
+import ScreenPokemon from './components/ScreenPokemon';
 
 function App() {
+  const[pokemones, setPokemon] = useState([])
+  const pokeUrl = 'https://pokeapi.co/api/v2/pokemon'
+
+  const fetchData = async (URL) => {
+    const response = await fetch(URL);
+    const data = await response.json();
+
+    return data;
+  };
+  const pokemonData = async (pokeUrl) => {
+    const response = await fetchData(pokeUrl);
+    const promises = await response.results.map((poke) => (
+      fetchData(poke.url)
+    ));
+    const pokeImage = await Promise.all(promises);
+    
+    setPokemon(pokeImage);
+  };
+  useEffect(() => {
+    pokemonData(pokeUrl);
+  }, [])
+
   return (
     <>
     <div className='main-container'>
@@ -11,7 +34,9 @@ function App() {
           <div className='r'></div>
         </div>
         <div className='screen-box'>
-          <div className='screen'></div>
+          <div className='screen'>
+            <ScreenPokemon pokemones={pokemones}/>
+          </div>
         </div>
         <div className='button-container' id='container'>
           <div className='container-pad' id='container'>

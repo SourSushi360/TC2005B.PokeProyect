@@ -100,6 +100,24 @@
   height: 200px;
 
   background-color: #797E00;
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+} .image-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+} .image-box {
+  font-family: "Oswald", sans-serif;
+  font-size: small;
+  margin: 0px;
+} .image-box .image {
+  width: 70px;
+  height: auto;
 }
 
 .button-container {
@@ -172,42 +190,41 @@
   flex-direction: row;
   justify-content: center;
 } #up {
-  background: linear-gradient(to top, black, rgb(24, 24, 24));
+  background: linear-gradient(to top, black, rgb(80, 80, 80));
   border-radius: 8px 8px 0 0;
 } #up:active {
   background: black;
-  border-top-color: rgb(50, 50, 50);
-  border-left-color: rgb(50, 50, 50);
-  border-right-color: rgb(50, 50, 50);
+  border-top-color: rgb(100,100,100);
+  border-left-color: rgb(100,100,100);
+  border-right-color: rgb(100,100,100);
 } #left {
-  background: linear-gradient(to left, black, rgb(24, 24, 24));
+  background: linear-gradient(to left, black, rgb(80, 80, 80));
   border-radius: 8px 0 0 8px;
 } #left:active {
   background: black;
-  border-top-color: rgb(50, 50, 50);
-  border-bottom-color: rgb(50, 50, 50);
-  border-left-color: rgb(50, 50, 50);
+  border-top-color: rgb(100,100,100);
+  border-bottom-color: rgb(100,100,100);
+  border-left-color: rgb(100,100,100);
 } #down {
-  background: linear-gradient(to bottom, black, rgb(24, 24, 24));
+  background: linear-gradient(to bottom, black, rgb(80, 80, 80));
   border-radius: 0 0 8px 8px;
 } #down:active {
   background: black;
-  border-bottom-color: rgb(50, 50, 50);
-  border-left-color: rgb(50, 50, 50);
-  border-right-color: rgb(50, 50, 50);
+  border-bottom-color: rgb(100,100,100);
+  border-left-color: rgb(100,100,100);
+  border-right-color: rgb(100,100,100);
 } #right {
-  background: linear-gradient(to right, black, rgb(24, 24, 24));
+  background: linear-gradient(to right, black, rgb(80, 80, 80));
   border-radius: 0 8px 8px 0;
 } #right:active {
   background: black;
-  border-top-color: rgb(50, 50, 50);
-  border-bottom-color: rgb(50, 50, 50);
-  border-right-color: rgb(50, 50, 50);
+  border-top-color: rgb(100,100,100);
+  border-bottom-color: rgb(100,100,100);
+  border-right-color: rgb(100,100,100);
 }
 
 .label {
   display: flex;
-  flex-direction: row;
   align-items: baseline;
 
   position: absolute;
