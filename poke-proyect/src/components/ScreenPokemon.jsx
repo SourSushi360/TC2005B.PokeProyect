@@ -1,12 +1,11 @@
 
-const ScreenPokemon = ({pokemones}) => {
-    console.log(pokemones);
+const ScreenPokemon = ({pokemones, position}) => {
     return (
         <div className="image-container">
-            {pokemones.map((pokemon) => (
-                <div className="image-box">
-                    <img className="image" key={pokemon.id} src={pokemon.sprites.front_default} alt="" />
-                    <div key={pokemon.id} className="name">{pokemon.name}</div>
+            {pokemones.map((pokemon, idx) => (
+                <div className="image-box" key={pokemon.id} style={{background: idx === position ? '#494b0179' : 'transparent'}}>
+                    <img className="image" src={pokemon.sprites.front_default} alt="" />
+                    <div className="name">{pokemon.name}</div>
                 </div>
             ))}
         </div>
