@@ -113,12 +113,19 @@
 
   justify-content: center;
 } .image-box {
+  position: absolute;
+  left: 32px;
+  height: 100%;
+  width: auto;
+
   font-family: "Oswald", sans-serif;
-  font-size: small;
+  font-size: x-large;
   margin: 0px;
 } .image-box .image {
-  width: 70px;
-  height: auto;
+  width: auto;
+  height: 80%;
+} .image-box .name {
+  margin-top: -20px;
 }
 
 .button-container {

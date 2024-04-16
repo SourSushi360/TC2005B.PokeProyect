@@ -34,21 +34,20 @@ function App() {
     pokemonData(pokeUrl);
   }, [])
   const handleSelection = (foward) => {
-    if (foward && position > 20) return;
-    if (!foward) {
+    if (foward && position === 20) {
+      setPosition(0)
+    } else if (!foward && position === 0) {
+      setPosition(20)
+    } else if (!foward) {
       setPosition(position - 1);
     } else {
       setPosition(position + 1);
     }
-    console.log(position);
   }
   const filterSelection = () => {
     const myPokeSelection = pokemones.filter((value, idx) => position === idx);
     setMyPokeSelection(myPokeSelection);
     getComputerSelection();
-
-    console.log('aaaa');
-    console.log(myPokeSelection);
   }
   const getComputerSelection = () => {
     const computerPos = Math.floor(Math.random()*20);
